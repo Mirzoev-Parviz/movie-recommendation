@@ -7,12 +7,20 @@ import (
 	"os"
 	"os/signal"
 	recomendation "recommendation"
+	"recommendation/db"
 	"recommendation/internal/handler"
 	"recommendation/internal/services"
+	"recommendation/utils"
 	"syscall"
 )
 
 func main() {
+	utils.ReadSettings()
+
+	db.StartDbConnection()
+	_db := db.GetDBConn()
+
+	defer db.DisconnectDB(_db)
 	srv := new(recomendation.Server)
 	service := services.NewServices(nil)
 	handlers := handler.NewHandler(service)

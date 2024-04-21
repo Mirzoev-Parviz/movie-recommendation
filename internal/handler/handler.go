@@ -11,7 +11,7 @@ type Handler struct {
 }
 
 func NewHandler(service *services.Service) *Handler {
-	return &Handler{}
+	return &Handler{services: service}
 }
 
 func (h *Handler) InitRoutes() *gin.Engine {
