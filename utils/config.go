@@ -1,9 +1,9 @@
 package utils
 
 import (
+	"github.com/Mirzoev-Parviz/movie-recommendation/models"
 	"github.com/spf13/viper"
 	"log"
-	"recommendation/models"
 )
 
 var AppSettings models.Settings

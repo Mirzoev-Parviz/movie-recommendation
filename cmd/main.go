@@ -3,14 +3,15 @@ package main
 import (
 	"context"
 	"fmt"
+	recomendation "github.com/Mirzoev-Parviz/movie-recommendation"
+	"github.com/Mirzoev-Parviz/movie-recommendation/db"
+	"github.com/Mirzoev-Parviz/movie-recommendation/internal/handler"
+	"github.com/Mirzoev-Parviz/movie-recommendation/internal/services"
+	"github.com/Mirzoev-Parviz/movie-recommendation/utils"
 	"log"
 	"os"
 	"os/signal"
-	recomendation "recommendation"
-	"recommendation/db"
-	"recommendation/internal/handler"
-	"recommendation/internal/services"
-	"recommendation/utils"
+
 	"syscall"
 )
 

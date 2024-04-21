@@ -2,8 +2,8 @@ package db
 
 import (
 	"fmt"
+	"github.com/Mirzoev-Parviz/movie-recommendation/utils"
 	"log"
-	"recommendation/utils"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

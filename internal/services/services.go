@@ -1,6 +1,6 @@
 package services
 
-import "recommendation/internal/repository"
+import "github.com/Mirzoev-Parviz/movie-recommendation/internal/repository"
 
 type Service struct {
 }

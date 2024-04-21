@@ -1,9 +1,9 @@
 package handler
 
 import (
+	"github.com/Mirzoev-Parviz/movie-recommendation/internal/services"
 	"github.com/gin-gonic/gin"
 	"net/http"
-	"recommendation/internal/services"
 )
 
 type Handler struct {
