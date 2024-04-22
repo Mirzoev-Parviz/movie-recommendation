@@ -2,14 +2,14 @@ package models
 
 import "time"
 
-type Items struct {
+type Item struct {
 	ID          int      `json:"item_id"`
 	ContentType string   `json:"content_type"`
 	Title       string   `json:"title"`
 	ReleaseYear float32  `json:"release_year"`
 	Genres      []string `json:"genres"`
 	Countries   []string `json:"countries"`
-	ForKids     float64  `json:"for_kids"`
+	ForKids     bool     `json:"for_kids"`
 	AgeRating   float64  `json:"age_rating"`
 	Studios     []string `json:"studios"`
 	Directors   []string `json:"directors"`
