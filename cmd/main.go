@@ -4,7 +4,6 @@ import (
 	"context"
 	"fmt"
 	recomendation "github.com/Mirzoev-Parviz/movie-recommendation"
-	"github.com/Mirzoev-Parviz/movie-recommendation/db"
 	"github.com/Mirzoev-Parviz/movie-recommendation/internal/handler"
 	"github.com/Mirzoev-Parviz/movie-recommendation/internal/services"
 	"github.com/Mirzoev-Parviz/movie-recommendation/utils"
@@ -18,10 +17,6 @@ import (
 func main() {
 	utils.ReadSettings()
 
-	db.StartDbConnection()
-	_db := db.GetDBConn()
-
-	defer db.DisconnectDB(_db)
 	srv := new(recomendation.Server)
 	service := services.NewServices(nil)
 	handlers := handler.NewHandler(service)
