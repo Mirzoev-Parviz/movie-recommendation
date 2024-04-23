@@ -8,15 +8,15 @@ The system provides movie recommendations for users based on their previous inte
 
 ## Installation
 
-1. Clone the repository:
+### Clone the repository:
 ```cmd
-   git clone https://github.com/yourusername/recommendation-system.git
+   git clone https://github.com/Mirzoev-Parviz/movie-recommendation.git
 ```
-2. Navigate to the project directory:
+### Navigate to the project directory:
 ```cmd
    cd recommendation-system
 ```
-3. Run the application:
+### Run the application:
 ```cmd
     go run ./cmd
 ```
