@@ -1,8 +1,12 @@
 package utils
 
 import (
+	"encoding/csv"
+	"github.com/Mirzoev-Parviz/movie-recommendation/internal/dto"
 	"github.com/Mirzoev-Parviz/movie-recommendation/models"
 	"math/rand"
+	"os"
+	"strings"
 	"time"
 )
 
@@ -75,4 +79,36 @@ func calculateSetSimilarity(set1 map[string]bool, set2 []string) float64 {
 	}
 	similarity := float64(commonItems) / float64(len(set1)+len(set2)-commonItems)
 	return similarity
+}
+
+func ReadCSV(filename string) ([][]string, error) {
+	file, err := os.Open(filename)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+	reader := csv.NewReader(file)
+	data, err := reader.ReadAll()
+	if err != nil {
+		return nil, err
+	}
+	return data, nil
+}
+
+func SplitData(data string) []string {
+	return strings.Split(data, ",")
+}
+
+func ConvertRCM(ides []int) []models.Item {
+	var items []models.Item
+
+	for _, id := range ides {
+		for _, item := range dto.Items {
+			if item.ID == id {
+				items = append(items, item)
+			}
+		}
+	}
+
+	return items
 }

@@ -6,7 +6,8 @@ type Item struct {
 	ID          int      `json:"item_id"`
 	ContentType string   `json:"content_type"`
 	Title       string   `json:"title"`
-	ReleaseYear float32  `json:"release_year"`
+	TitleOrig   string   `json:"title_orig"`
+	ReleaseYear float64  `json:"release_year"`
 	Genres      []string `json:"genres"`
 	Countries   []string `json:"countries"`
 	ForKids     bool     `json:"for_kids"`

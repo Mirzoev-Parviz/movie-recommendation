@@ -7,3 +7,8 @@ db:
   password: "postgres"
   name: "kion_db"
   sslmode: "disable"
+
+data_directory:
+  users: "./files/users.csv"
+  items: "./files/items.csv"
+  interactions: "./files/interactions.csv"

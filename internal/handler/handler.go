@@ -23,5 +23,6 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		})
 	})
 
+	router.POST("/recommendations", h.GetRCM)
 	return router
 }
