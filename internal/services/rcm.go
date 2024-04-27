@@ -1,16 +1,19 @@
 package services
 
 import (
-	"github.com/Mirzoev-Parviz/movie-recommendation/models"
-	"github.com/Mirzoev-Parviz/movie-recommendation/utils"
 	"sort"
 	"sync"
+
+	"github.com/Mirzoev-Parviz/movie-recommendation/internal/dto"
+	"github.com/Mirzoev-Parviz/movie-recommendation/models"
+	"github.com/Mirzoev-Parviz/movie-recommendation/utils"
 )
 
 type RCM interface {
 	Recommend(interactions []models.Interactions, items []models.Item,
 		users []models.User, userID int) []int
 	RecommendRandomMovies(userGenres map[string]bool, items []models.Item) []int
+	GetUserWatchedMovies(userID int) []models.Item
 }
 
 type RCM_Service struct {
@@ -127,4 +130,15 @@ func (r *RCM_Service) RecommendRandomMovies(userGenres map[string]bool, items []
 		}
 	}
 	return recommendedItems
+}
+
+func (r *RCM_Service) GetUserWatchedMovies(userID int) []models.Item {
+	var ides []int
+	for _, inter := range dto.Interactions {
+		if inter.UserID == userID {
+			ides = append(ides, inter.ItemID)
+		}
+	}
+
+	return utils.ConvertRCM(ides)
 }

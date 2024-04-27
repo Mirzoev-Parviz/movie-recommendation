@@ -1,9 +1,10 @@
 package handler
 
 import (
+	"net/http"
+
 	"github.com/Mirzoev-Parviz/movie-recommendation/internal/services"
 	"github.com/gin-gonic/gin"
-	"net/http"
 )
 
 type Handler struct {
@@ -24,5 +25,6 @@ func (h *Handler) InitRoutes() *gin.Engine {
 	})
 
 	router.POST("/recommendations", h.GetRCM)
+	router.POST("/watched-movies", h.GetWatched)
 	return router
 }

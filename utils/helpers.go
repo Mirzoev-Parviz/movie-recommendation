@@ -2,12 +2,13 @@ package utils
 
 import (
 	"encoding/csv"
-	"github.com/Mirzoev-Parviz/movie-recommendation/internal/dto"
-	"github.com/Mirzoev-Parviz/movie-recommendation/models"
 	"math/rand"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/Mirzoev-Parviz/movie-recommendation/internal/dto"
+	"github.com/Mirzoev-Parviz/movie-recommendation/models"
 )
 
 func HasCommonGenres(itemGenres []string, userGenres map[string]bool) bool {
